@@ -1,0 +1,70 @@
+
+<html>
+<head><title> Extra Credit Part 1 </title></head>
+
+<style>
+
+    button{
+        margin: 0pc 10px 0px 10px;
+		border: 2px solid black;
+        border-radius: 20px;
+        font-size: 50px;
+        font-family: “Comic Sans MS”, “Comic Sans”, cursive;
+    }
+    html{
+        background-color: rgb(248, 220, 224);
+        font-size: 50px; 
+        font-family: “Comic Sans MS”, “Comic Sans”, cursive;
+    }
+	.container {
+        border-radius: 20px;
+		display: flex;
+		flex-direction: row;
+		margin-top: 50px;
+	}
+
+	.box {
+        color:rgb(152, 152, 255);
+        border-radius: 20px;
+
+		padding: 10px;
+		border: 2px solid black;
+		font-size: 24px;
+    }
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<input type="text" id="leftBox" >
+		<button id="jumpButton" class="button" onclick="jumpText()">JUMP &gt;</button>
+		<input type="text" id="rightBox" >
+	</div>
+
+	<script>
+		function jumpText() {
+            var jumpButton = document.getElementById("jumpButton");
+			var jumpButtonText = jumpButton.textContent;
+        //switch the > / <
+            if (jumpButtonText === "JUMP >") {
+				jumpButton.textContent = "< JUMP";
+			} else {
+				jumpButton.textContent = "JUMP >";
+			}
+
+            //get values
+			var leftBox = document.getElementById("leftBox");
+			var rightBox = document.getElementById("rightBox");
+			var leftBoxValue = leftBox.value;
+            //switch
+			leftBox.value = rightBox.value;
+			rightBox.value = leftBoxValue;
+
+
+		}
+	</script>
+</body>
+</html>
+
+
